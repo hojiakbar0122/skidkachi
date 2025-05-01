@@ -5,6 +5,8 @@ import { UsersModule } from './users/users.module';
 import { User } from "./users/models/user.model";
 import { AuthModule } from './auth/auth.module';
 import { MailModule } from './mail/mail.module';
+import { AdminsModule } from './admins/admins.module';
+import { Admin } from "./admins/models/admin.model";
 
 @Module({
   imports: [
@@ -16,7 +18,7 @@ import { MailModule } from './mail/mail.module';
       username: process.env.PG_USER,
       password: process.env.PG_PASSWORD,
       database: process.env.PG_DATABASE,
-      models: [User],
+      models: [User, Admin],
       autoLoadModels: true,
       sync: { alter: true },
       logging: false,
@@ -24,6 +26,7 @@ import { MailModule } from './mail/mail.module';
     UsersModule,
     AuthModule,
     MailModule,
+    AdminsModule,
   ],
   controllers: [],
   providers: [],
