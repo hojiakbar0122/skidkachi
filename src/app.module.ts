@@ -17,6 +17,11 @@ import { Status } from "./status/models/status.model";
 import { BotModule } from "./bot/bot.module";
 import { TelegrafModule } from "nestjs-telegraf";
 import { BOT_NAME } from "./app.constans";
+import { TypeModule } from './type/type.module';
+import { CategoryModule } from './category/category.module';
+import { DiscountsModule } from './discounts/discounts.module';
+import { SocialMediaTypeModule } from './social_media_type/social_media_type.module';
+import { StoreSocialLinksModule } from './store_social_links/store_social_links.module';
 
 @Module({
   imports: [
@@ -52,6 +57,11 @@ import { BOT_NAME } from "./app.constans";
     DistrictModule,
     StoreModule,
     BotModule,
+    TypeModule,
+    CategoryModule,
+    DiscountsModule,
+    SocialMediaTypeModule,
+    StoreSocialLinksModule,
   ],
   controllers: [],
   providers: [],
