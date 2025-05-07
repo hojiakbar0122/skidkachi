@@ -22,6 +22,13 @@ import { CategoryModule } from './category/category.module';
 import { DiscountsModule } from './discounts/discounts.module';
 import { SocialMediaTypeModule } from './social_media_type/social_media_type.module';
 import { StoreSocialLinksModule } from './store_social_links/store_social_links.module';
+import { Bot } from "./bot/model/bot.model";
+import { Otp } from "./users/models/otp.model";
+import { Address } from "./bot/model/address.model";
+import { AdsModule } from './ads/ads.module';
+import { FavouritesModule } from './favourites/favourites.module';
+import { ReviewsModule } from './reviews/reviews.module';
+import { StoreSubscribersModule } from './store_subscribers/store_subscribers.module';
 
 @Module({
   imports: [
@@ -43,7 +50,7 @@ import { StoreSocialLinksModule } from './store_social_links/store_social_links.
       username: process.env.PG_USER,
       password: process.env.PG_PASSWORD,
       database: process.env.PG_DATABASE,
-      models: [User, Admin, District, Region, Status],
+      models: [User, Admin, District, Region, Status, Bot, Otp, Address],
       autoLoadModels: true,
       sync: { alter: true },
       logging: false,
@@ -62,6 +69,10 @@ import { StoreSocialLinksModule } from './store_social_links/store_social_links.
     DiscountsModule,
     SocialMediaTypeModule,
     StoreSocialLinksModule,
+    AdsModule,
+    FavouritesModule,
+    ReviewsModule,
+    StoreSubscribersModule,
   ],
   controllers: [],
   providers: [],
